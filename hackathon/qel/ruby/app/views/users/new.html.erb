@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/signup/assets/img/favicon.png">
+    <title>Doctor Strange</title>
+
+    
+    <link rel="stylesheet" href="https://s3.ap-south-1.amazonaws.com/wp-myy-bucket-raju/assets/lib/stroke-7/style.css"/>
+
+    <link rel="stylesheet" href="https://s3.ap-south-1.amazonaws.com/wp-myy-bucket-raju/assets/lib/perfect-scrollbar/css/perfect-scrollbar.min.css" />
+
+
+    <link rel="stylesheet" href="https://s3.ap-south-1.amazonaws.com/wp-myy-bucket-raju/assets/lib/font-awesome/css/font-awesome.min.css" />
+
+
+    <link rel="stylesheet" href="https://s3.ap-south-1.amazonaws.com/wp-myy-bucket-raju/assets/css/app.css" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body class="mai-splash-screen">
+    <div class="mai-wrapper mai-sign-up">
+      <div class="main-content container">
+        <div class="splash-container row">
+          <div class="col-sm-6 form-message"><img src="../../assets/signup/assets/img/logo-2x.png" alt="logo" width="169" height="28" class="logo-img mb-4"><span class="splash-description text-center mt-4 mb-4">Sign up</span>
+            <form class="sign-up-form" method="post" action="/users">
+              <div class="form-group">
+                <div class="input-group"><span class="input-group-addon"><i class="fa fa-address-book"></i></span>
+                  <input id="username" name="user[name]" type="text" placeholder="Username" autocomplete="off" class="form-control">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group"><span class="input-group-addon"><i class="fa fa-address-card-o"></i></span>
+                  <input id="email" name="user[email]" type="text" placeholder="Email" class="form-control">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group"><span class="input-group-addon"><i class="fa fa-volume-control-phone"></i></span>
+                  <input id="contact_number"  name="user[contact_number]" type="text" placeholder="Contact Number" class="form-control">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group"><span class="input-group-addon"><i class="fa fa-hourglass-half"></i></span>
+                  <input id="age" type="number" name="user[age]" placeholder="Age" class="form-control">
+                </div>
+              </div>
+
+              <div class="form-group inline row">
+                <div class="col-6">
+                  <div class="input-group"><span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                    <input id="pass1" type="password" name="user[password]" placeholder="Password" class="form-control">
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="input-group"><span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                    <input type="password" placeholder="Confirm" name="user[password_confirmation]" class="form-control">
+                  </div>
+                </div>
+              </div>
+
+               <div class="form-group row mt-3">
+                    <label class="col-sm-3 col-form-label text-right">Gender</label>
+                    <div class="col-sm-6">
+                      <div class="mai-radio-icon form-check form-check-inline">
+                        <label class="custom-control custom-radio custom-radio-icon inline">
+                          <input id="radioIcon1" type="radio" name="user[gender]" value="female" checked="" class="custom-control-input"><span class="custom-control-indicator"><span class="custom-control-description fa fa-venus"></span></span>
+                        </label>
+                        <label class="custom-control custom-radio custom-radio-icon inline">
+                          <input id="radioIcon2" type="radio"  name="user[gender]" value="male" class="custom-control-input"><span class="custom-control-indicator"><span class="custom-control-description fa fa-mars"></span></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+              <div class="form-group sign-up-submit">
+                <button data-dismiss="modal" type="submit" class="btn btn-lg btn-primary btn-block">Sign up</button>
+              </div>
+              <!-- <div class="title mb-4"><span>Or</span></div>
+              <div class="form-group row social-signup mb-4">
+                <div class="col-6">
+                  <button type="button" class="btn btn-block btn-social btn-color btn-facebook"><i class="fa fa-facebook icon icon-left"></i> Facebook</button>
+                </div>
+                <div class="col-6">
+                  <button type="button" class="btn btn-block btn-social btn-color btn-google-plus"><i class="fa fa-google-plus icon icon-left"></i> Google plus</button>
+                </div>
+              </div> -->
+              <p class="conditions">By creating an account, you agree with the <a href="#">Terms and Conditions</a>.</p>
+            </form>
+            <div class="out-links"><a href="#">© 2017 Doctor Strange</a></div>
+          </div>
+          <div class="col-sm-6 user-message"><span class="splash-message text-left">Welcome to<br> Doctor Strange..!<br> Enjoy</span><span class="alternative-message text-right">Already have an account <a href="/login">Sign In</a></span></div>
+        </div>
+      </div>
+    </div>
+   
+    <script src="https://s3.ap-south-1.amazonaws.com/wp-myy-bucket-raju/assets/lib/jquery/jquery.min.js"></script>
+
+    <script src="https://s3.ap-south-1.amazonaws.com/wp-myy-bucket-raju/assets/lib/tether/js/tether.min.js"></script>
+
+    <script src="https://s3.ap-south-1.amazonaws.com/wp-myy-bucket-raju/assets/lib/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js"></script>
+
+    <script src="https://s3.ap-south-1.amazonaws.com/wp-myy-bucket-raju/assets/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+
+
+    <script src="https://s3.ap-south-1.amazonaws.com/wp-myy-bucket-raju/assets/js/app.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+      	//initialize the javascript
+      	App.init();
+      });
+      
+    </script>
+   
+  </body>
+</html>
