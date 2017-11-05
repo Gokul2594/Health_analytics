@@ -26,9 +26,12 @@ result = {}
 
 class Home(Home):
     
+    //method to predict if hemogram level is healthy or not 
     @http.route('/health/hemogram', type='json', auth="public",csrf=False)
     def hemogram(self,hemo_data):
         #~ hemo_data = {str(key): str(value) for key, value in hemo_data.items()}
+        
+        //check if the patient is male and make prediction
         if str(hemo_data['sex']) == "male":
             hemogram_csv = pd.read_csv(dir_name + "/dataset/hemogram_men.csv")
             columns = hemogram_csv.iloc[:,0:len(hemogram_csv.columns)]
@@ -38,6 +41,8 @@ class Home(Home):
                 except:
                     pass
             vals = [feature['hemoglobin'],feature['pcv'],feature['rbc'],feature['mchc'],feature['mcv'],feature['mch'],feature['esr'],feature['platelets_count']]
+            
+            //picke the prediction to reduce the processing time, if the pickle files are present skip this step 
             if not os.path.exists(dir_name + "/pickle_files/hemogram_men.pickle"):
                 read_csv = pd.read_csv(dir_name + "/dataset/hemogram_men.csv")
                 X = hemogram_csv.iloc[:,0:-1] 
@@ -52,7 +57,7 @@ class Home(Home):
                 else:
                     result['predictions'] = "unhealthy"
                 return result
-                
+       
             else:
                 print "Pickle file " + "hemogram_men.csv" + ".pickle already present"
                 with open(dir_name + '/pickle_files/hemogram_men.pickle','rb+') as data:
@@ -62,6 +67,8 @@ class Home(Home):
                     else:
                         result['predictions'] = "unhealthy"
                     return json.dumps(result)
+       
+    //if the patient is women, make predictions
         else:
             hemogram_csv = pd.read_csv(dir_name + "/dataset/hemogram_women.csv" )
             columns = hemogram_csv.iloc[:,0:len(hemogram_csv.columns)]
@@ -94,7 +101,8 @@ class Home(Home):
                     else:
                         result['predictions'] = "unhealthy"
                     return json.dumps(result)
-        
+    
+    //method to predict if biochemecial parameter test is healthy or not
     @http.route('/health/bio_chemical_parameters', type='json', auth="public",csrf=False)
     def bio_chemical_parameters(self,bio_chemical_data):
         if bio_chemical_data['sex'] == "male":
@@ -162,6 +170,7 @@ class Home(Home):
                         result['predictions'] = "unhealthy"
                     return json.dumps(result)
     
+    //method to predict if liver function test is healthy or not
     @http.route('/health/liver_function_test', type='json', auth="public",csrf=False)
     def liver_function_test(self,liver_function_data):
         liver_function_csv = pd.read_csv(dir_name + "/dataset/liver_function_test.csv")
@@ -194,7 +203,8 @@ class Home(Home):
                 else:
                     result['predictions'] = "unhealthy"
                 return json.dumps(result)
-        
+    
+    //method to predict if lipid profile test is healthy or not
     @http.route('/health/lipid_test', type='json', auth="public",csrf=False)
     def lipid_profile(self,lipid_profile_data):
         lipid_profile_csv = pd.read_csv(dir_name + "/dataset/lipid_profile.csv")
